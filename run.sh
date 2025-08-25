@@ -3,7 +3,7 @@
 # Script para compilar y ejecutar la PoC del ABB
 # y guardar toda la salida en resultado.txt
 
-SRC="arbol_cpp.cpp"
+SRC="/Users/alejandromedellin/Downloads/Entrega_EquipoB_Arboles/codigo/arbol_cpp.cpp"
 EXE="arbol_cpp"
 OUTPUT="resultado.txt"
 
