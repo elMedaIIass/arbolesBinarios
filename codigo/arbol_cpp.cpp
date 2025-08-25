@@ -11,6 +11,7 @@ using namespace std;
 /*
   Proyecto: Árbol Binario de Búsqueda (ABB) – Implementación manual vs std::set
   Equipo B: Árboles Binarios
+  Integrantes: MEDELLIN RODRIGUEZ ALEJANDRO (24110829), MARTINEZ QUIROZ CARLOS IGNACIO (24110486), OSORNIO SANCHEZ JUAN JOSE (13311853), RODRIGUEZ RODRIGUEZ VICTOR HUGO (24110480), MADRID PEREZ MARIA JOSE (24110499).
   Operaciones: insertar, buscar, eliminar, recorridos (inorden, preorden, postorden)
   PoC: Directorio de contactos (nombres) ordenado alfabéticamente
   Comparación de rendimiento: inserción y búsqueda de 1000 elementos
