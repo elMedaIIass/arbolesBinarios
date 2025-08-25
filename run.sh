@@ -1,25 +1,27 @@
 #!/bin/bash
 
-# Script para compilar y ejecutar la PoC del ABB automáticamente
+# Script para compilar y ejecutar la PoC del ABB
+# y guardar toda la salida en resultado.txt
 
-# Nombre del archivo fuente
 SRC="arbol_cpp.cpp"
-
-# Nombre del ejecutable
 EXE="arbol_cpp"
+OUTPUT="resultado.txt"
+
+# Limpiar archivo anterior
+rm -f "$OUTPUT"
 
 # Compilar
-echo "Compilando $SRC..."
-g++ -std=c++17 -Wall -O2 -finput-charset=UTF-8 -fexec-charset=UTF-8 "$SRC" -o "$EXE"
+echo "Compilando $SRC..." | tee -a "$OUTPUT"
+g++ -std=c++17 -Wall -O2 -finput-charset=UTF-8 -fexec-charset=UTF-8 "$SRC" -o "$EXE" 2>&1 | tee -a "$OUTPUT"
 
 # Verificar si compiló
 if [ $? -ne 0 ]; then
-    echo "Error en compilación. Revisa tu código."
+    echo "Error en compilación. Revisa tu código." | tee -a "$OUTPUT"
     exit 1
 fi
 
-# Ejecutar
-echo "Ejecutando PoC..."
-./"$EXE"
+# Ejecutar y guardar salida
+echo "Ejecutando PoC..." | tee -a "$OUTPUT"
+./"$EXE" 2>&1 | tee -a "$OUTPUT"
 
-echo "¡Fin de la PoC!"
+echo "¡Fin de la PoC! Salida guardada en $OUTPUT" | tee -a "$OUTPUT"
